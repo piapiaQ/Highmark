@@ -41,9 +41,7 @@ def merge_claim_clinic(claim_type):
     
     claim_wide = pd.read_csv('wideforamt_sum_{}.csv'.format(claim_type))
     for i in ['3a','3b','4']:
-# =============================================================================
-#         need fix
-# =============================================================================
+
         #   merge with final clinic by stage group(after 3 deletion) to get the final sharing patient lists 
         clinic = pd.read_csv('{}\Clinical Data\Clinical Data\\by_stage_tma_lists\\final_base_{}.csv'.format(basepath,i))
         clinic.rename(columns = {'tma_acct':'TMA_Acct','_traj_Group':'traj_Group_clinic'},inplace = True)
